@@ -1,6 +1,7 @@
 from . import cpp, java, javascript, python3, rust, go
 import logging
 
+
 syntax_checkers = {
     "python3": python3.check_syntax,
     "java": java.check_syntax,
