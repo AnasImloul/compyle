@@ -1,4 +1,4 @@
-from . import cpp, java, javascript, python3
+from . import cpp, java, javascript, python3, rust, go
 import logging
 
 syntax_checkers = {
@@ -6,6 +6,8 @@ syntax_checkers = {
     "java": java.check_syntax,
     "c++": cpp.check_syntax,
     "javascript": javascript.check_syntax,
+    "go": go.check_syntax,
+    "rust": rust.check_syntax,
 }
 
 LANGUAGES = list(syntax_checkers.keys())
