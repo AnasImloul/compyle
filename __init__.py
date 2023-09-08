@@ -14,11 +14,11 @@ syntax_checkers = {
 LANGUAGES = list(syntax_checkers.keys())
 
 
-def check_syntax(code, language):
+def check_syntax(code, language, debug=False):
     language = language.lower()
 
     if language not in LANGUAGES:
         logging.warning(f"Language {language} not supported")
         return False
 
-    return syntax_checkers[language](code)
+    return syntax_checkers[language](code, debug=debug)

@@ -37,7 +37,7 @@ def remove_type_hints(code):
         return code
 
 
-def check_syntax(code):
+def check_syntax(code, debug=False):
     code = remove_type_hints(code)
 
     # save code to a temp file and run it
@@ -45,6 +45,7 @@ def check_syntax(code):
         f.write(code)
         f.flush()
         result = subprocess.run(["python", f.name], capture_output=True)
-        # print(result.stderr.decode())
+        if debug:
+            print(result.stderr.decode(), result.stdout.decode(), result.returncode)
         f.close()
         return result.returncode == 0
