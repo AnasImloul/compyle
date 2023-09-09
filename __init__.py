@@ -11,6 +11,15 @@ syntax_checkers = {
     "rust": rust.check_syntax,
 }
 
+extensions = {
+    "python3": python3.extension,
+    "java": java.extension,
+    "c++": cpp.extension,
+    "javascript": javascript.extension,
+    "go": go.extension,
+    "rust": rust.extension,
+}
+
 LANGUAGES = list(syntax_checkers.keys())
 
 
