@@ -20,13 +20,23 @@ extensions = {
     "rust": rust.extension,
 }
 
-LANGUAGES = list(syntax_checkers.keys())
+comments = {
+    "python3": python3.comment,
+    "java": java.comment,
+    "c++": cpp.comment,
+    "javascript": javascript.comment,
+    "go": go.comment,
+    "rust": rust.comment,
+}
+
+
+languages = list(syntax_checkers.keys())
 
 
 def check_syntax(code, language, debug=False):
     language = language.lower()
 
-    if language not in LANGUAGES:
+    if language not in languages:
         logging.warning(f"Language {language} not supported")
         return False
 
